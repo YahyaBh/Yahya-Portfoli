@@ -5,10 +5,6 @@ import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
-
-import Modal from 'react-modal';
 
 
 import './Work.scss';
@@ -44,32 +40,6 @@ const Work = () => {
     }, 500);
   };
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      width: '800px',
-      height: '300px',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
-
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  Modal.setAppElement('#root');
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   return (
     <>
       <h2 className="head-text">Never <span>Stop</span> Make <span>Perfection</span></h2>
@@ -92,19 +62,13 @@ const Work = () => {
         className="app__work-portfolio"
       >
         {filterWork?.map((work, index) => (
-          <div onClick={openModal} className="app__work-item app__flex" key={index}>
+          <div className="app__work-item app__flex" key={index}>
             <div
               className="app__work-img app__flex"
             >
               <img src={urlFor(work.imgUrl)} alt={work.name} />
-              {console.log(work.imgUrl[0])}
-              {work.imgUrl.map((image, index) => (
-                <div key={image + index}>
-                  <img src={urlFor(image.imageUrl)} alt="" />
-                </div>
-              ))}
+
               <motion.div
-                whileHover={{ opacity: [0, 1] }}
                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 className="app__work-hover app__flex"
               >
@@ -139,15 +103,6 @@ const Work = () => {
               <div className="app__work-tag app__flex">
                 <p className="p-text">{work.tags[0]}</p>
               </div>
-            </div>
-
-            <div>
-
-              <div>
-
-
-              </div>
-
             </div>
           </div>
         ))}

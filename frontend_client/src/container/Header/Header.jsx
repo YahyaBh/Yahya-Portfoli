@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { motion } from 'framer-motion'
 
 import { images } from '../../constants'
@@ -115,18 +115,22 @@ function Header() {
       >
 
         {skills.map((circle, index) =>
-          <div key={`circle-${index}`}>
-
-            <div data-for={circle.name + index} className="circle-cmp app__flex" >
-
+          <Fragment key={`circle-${index}`}>
+            <div className={`circle-cmp circle-cmp-number${index} app__flex`} data-tip data-for={circle.name}>
               <img src={urlFor(circle.icon)} alt="profile_bg" />
 
-            </div>
 
-            <ReactTooltip id={circle.name + index} place="top" effect="solid" textColor='black' backgroundColor='white'>
+            </div>
+            <ReactTooltip
+              id={circle.name}
+              effect="solid"
+              arrowColor="#fff"
+              className="skills-tooltip">
               {circle.desc}
             </ReactTooltip>
-          </div>
+          </Fragment>
+
+
         )
         }
 

@@ -4,8 +4,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
+    z-index: 2;
 
-    // disable the default padding styles
     .app__wrapper {
         padding: 0;
 
@@ -14,10 +14,6 @@
         }
     }
 }
-
-
-$rand : random(180);
-
 
 .app__header {
     flex: 1;
@@ -72,6 +68,18 @@ $rand : random(180);
         width: auto;
 
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+        @media screen and (max-width : 900px) {
+            padding: .5rem 1rem;
+            backdrop-filter: blur(4px);
+            background-color: rgba(255, 255, 255, 0.3);
+
+            &:hover {
+                z-index: 9;
+            }
+        }
+
+
     }
 
     .tag-cmp {
@@ -109,6 +117,7 @@ $rand : random(180);
     margin-left: 1rem;
 
     .circle-cmp {
+
         width: 100px;
         height: 100px;
         border-radius: 50%;
@@ -117,72 +126,84 @@ $rand : random(180);
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
         transition: all .5s ease;
 
+        z-index: 1;
+
         img {
             width: 60%;
             height: 60%;
+            -webkit-filter: saturate(0);
             filter: saturate(0);
+            z-index: 1;
         }
-
 
         &:hover {
             transform: scale(.95);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
             background-color: var(--primary-color);
-            
+
 
             img {
+                -webkit-filter: saturate(100%);
                 filter: saturate(100%);
             }
         }
-
     }
 
-
-    .circle-cmp:nth-child(1) {
-        width: 150px;
-        height: 150px;
+    .circle-cmp-number0 {
+        width: 120px !important;
+        height: 120px !important;
+        z-index: 1;
     }
 
-    .circle-cmpiv:nth-child(2) {
+    .circle-cmp-number1 {
         margin: 1rem;
-        height: 120px;
-        width: 120px;
+        height: 130px !important;
+        width: 130px !important;
+        z-index: 1;
     }
 
-    .circle-cmp:nth-child(3) {
-        width: 200px;
-        height: 200px;
+    .circle-cmp-number2 {
+        width: 140px !important;
+        height: 140px !important;
+        z-index: 1;
     }
 
-    .circle-cmp:nth-child(4) {
+    .circle-cmp-number3 {
         margin: 1rem;
-        width: 110px;
-        height: 110px;
+        width: 130px !important;
+        height: 130px !important;
+        z-index: 1;
     }
 
-    @media screen and (max-width: 2000px) {
-        .circle-cmp:nth-child(1) {
-            width: 110px !important;
-            height: 110px !important;
+
+
+    @media screen and (max-width: 900px) {
+        .circle-cmp-number0 {
+            width: 100px !important;
+            height: 100px !important;
             margin: 0 !important;
         }
 
-        .circle-cmp:nth-child(2) {
-            width: 110px !important;
-            height: 110px !important;
+        .circle-cmp-number1 {
+            width: 100px !important;
+            height: 100px !important;
             margin: 0 !important;
         }
 
-        .circle-cmp:nth-child(3) {
-            width: 110px !important;
-            height: 110px !important;
+        .circle-cmp-number2 {
+            width: 100px !important;
+            height: 100px !important;
             margin: 0 !important;
         }
 
-        .circle-cmp:nth-child(4) {
-            width: 110px !important;
-            height: 110px !important;
-            margin: 0.5rem !important;
+        .circle-cmp-number3 {
+            width: 100px !important;
+            height: 100px !important;
+            margin: 0rem !important;
+        }
+
+        & {
+            margin: 1rem;
         }
     }
 
@@ -192,9 +213,9 @@ $rand : random(180);
         flex-wrap: wrap;
         margin-left: 0;
 
-        // div {
-        //     margin: 1rem;
-        // }
+        .circle-cmp {
+            margin: 1rem;
+        }
     }
 }
 
@@ -210,8 +231,13 @@ $rand : random(180);
     img {
         width: 100%;
         -o-object-fit: contain;
-           object-fit: contain;
-        z-index: 1;
+        object-fit: contain;
+        z-index: 3;
+
+        @media screen and (max-width : 900px) {
+            margin-right: 0;
+            top: -22rem;
+        }
     }
 
     .overlay_circle {

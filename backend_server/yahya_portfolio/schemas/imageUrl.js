@@ -3,6 +3,10 @@ export default {
     title: 'Image Url',
     type: 'document',
     fields: [
-        
+        {
+            name: 'images',
+            title: 'Images',
+            type: 'image'
+        }
     ]
 }

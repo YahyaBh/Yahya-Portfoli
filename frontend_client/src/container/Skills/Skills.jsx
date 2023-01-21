@@ -26,7 +26,7 @@ const Skills = () => {
     });
   }, []);
 
-  
+
 
 
 
@@ -36,26 +36,31 @@ const Skills = () => {
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
+          {/* <h2 className="head-text">Skills</h2>
+          <br /> */}
           {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
-              key={skill.name} data-for="aa"
+              key={skill.name}
             >
               <div
-                className="app__flex"
+                data-tip data-for={skill.name + index}
+                className="app__skills-item-sec app__flex"
                 style={{ border: '3px solid ' + skill.bgColor, boxShadow: '0px 0px 30px -6px ' + skill.bgColor }}
               >
                 <img src={urlFor(skill.icon)} alt={skill.name} />
+
+                <ReactTooltip id={skill.name + index} backgroundColor="black" textColor="white" place="right" effect="solid">
+                  {skill.desc}
+                </ReactTooltip>
               </div>
               <p className="p-text">{skill.name}</p>
 
-              {/* <ReactTooltip id="aa" place="top" effect="solid" textColor='black' backgroundColor='white'>
-                ASDASDWADs
-              </ReactTooltip> */}
 
-              
+
+
 
 
             </motion.div>
@@ -65,8 +70,12 @@ const Skills = () => {
           ))}
 
 
+
+
         </motion.div>
         <div className="app__skills-exp">
+
+
           {experiences?.map((experience, index) => (
             <motion.div
               className="app__skills-exp-item"
