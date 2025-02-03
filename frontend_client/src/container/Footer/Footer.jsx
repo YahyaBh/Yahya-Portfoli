@@ -68,7 +68,7 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <button type="button" className="p-text" >{!loading ? `Send Message ` : 'Sending...'}<SiMinutemailer /></button>
+          <button type="button" className="p-text" onClick={handleSubmit} >{!loading ? `Send Message ` : 'Sending...'}<SiMinutemailer /></button>
         </div>
 
       ) : (
@@ -82,7 +82,7 @@ const Footer = () => {
 
 
       <div className='copyright'>
-        <p className='p-text'>2022 YAHYA</p>
+        <p className='p-text'>2024 YAHYA</p>
         <p className='p-text'>All rights reserved</p>
 
       </div>
