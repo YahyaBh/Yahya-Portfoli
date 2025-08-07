@@ -229,14 +229,17 @@
     position: relative;
 
     img {
-        width: 100%;
+        width: 80dvh;
         -o-object-fit: contain;
         object-fit: contain;
         z-index: 3;
 
         @media screen and (max-width : 900px) {
             margin-right: 0;
-            top: -22rem;
+            width: 100dvw;
+            overflow: hidden;
+            top: -5rem;
+            position: relative;
         }
     }
 

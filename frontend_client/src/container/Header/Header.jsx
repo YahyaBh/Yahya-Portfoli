@@ -87,7 +87,7 @@ function Header() {
           <div className="tag-cmp app__flex">
             <p className='p-text'>Full Stack Web Developer <CgWebsite /></p>
 
-            <a className='resume-button' download='resume_yahya.pdf' target="blank" href='https://cdn.sanity.io/files/8qw5kgvs/production/1f07f1cae080c2e4892f9198634aac0bb356ad31.pdf'>GET RESUME <BsFillFilePersonFill /></a>
+            <a className='resume-button' download='resume_yahya.pdf' target="blank" href='/ResumeYahyaBouhsine.pdf'>GET RESUME <BsFillFilePersonFill /></a>
           </div>
         </div>
       </motion.div>
@@ -97,7 +97,7 @@ function Header() {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__header-img"
       >
-        <img src={'/Images/SAVE_20221026_110125-ai-brush-removebg-lw8v0xp-min-min.png'} alt="profile_bg" />
+        <img src='./Images/SAVE_20221026_110125-ai-brush-removebg-lw8v0xp-min-min.png' alt="profile_bg" />
 
         <motion.div
           whileInView={{ scale: [0, 1] }}
