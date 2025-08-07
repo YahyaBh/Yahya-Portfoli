@@ -97,7 +97,7 @@ function Header() {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__header-img"
       >
-        <img src={'./Images/SAVE_20221026_110125-ai-brush-removebg-lw8v0xp-min-min.png'} alt="profile_bg" />
+        <img src={'/Images/SAVE_20221026_110125-ai-brush-removebg-lw8v0xp-min-min.png'} alt="profile_bg" />
 
         <motion.div
           whileInView={{ scale: [0, 1] }}
